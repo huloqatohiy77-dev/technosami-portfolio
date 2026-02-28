@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahadi Hasan Sami | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0D0D0D;
+            --bg-charcoal: #1A1C1E;
+            --accent-orange: #FF3B00;
+            --glow-shadow: 0 0 20px rgba(255, 59, 0, 0.4);
+            --strong-glow: 0 0 35px rgba(255, 59, 0, 0.6);
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: #E2E8F0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Ambient background glow */
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 59, 0, 0.1) 0%, rgba(25, 28, 30, 0) 70%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .portfolio-card {
+            background-color: var(--bg-charcoal);
+            border: 1px solid rgba(255, 59, 0, 0.2);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 59, 0, 0.1);
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 59, 0, 0.15);
+        }
+
+        .accent-border {
+            position: absolute;
+            top: -1px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+            box-shadow: var(--glow-shadow);
+        }
+
+        .glow-text {
+            color: var(--accent-orange);
+            text-shadow: 0 0 10px rgba(255, 59, 0, 0.5);
+        }
+
+        .pill {
+            background: rgba(255, 59, 0, 0.1);
+            border: 1px solid rgba(255, 59, 0, 0.3);
+            color: var(--accent-orange);
+            padding: 4px 16px;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 10px rgba(255, 59, 0, 0.1);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, var(--accent-orange), transparent);
+            width: 60px;
+            margin: 2rem 0;
+            box-shadow: var(--glow-shadow);
+        }
+
+        .stat-label {
+            color: #94A3B8;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .geometric-bg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 1px solid rgba(255, 59, 0, 0.1);
+            z-index: -1;
+        }
+
+        #square1 { top: 10%; left: 5%; transform: rotate(15deg); }
+        #circle1 { bottom: 15%; right: 8%; border-radius: 50%; width: 150px; height: 150px; }
+
+        .btn-contact {
+            margin-top: 2rem;
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-align: center;
+            display: block;
+            transition: all 0.3s ease;
+            box-shadow: var(--glow-shadow);
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--strong-glow);
+            filter: brightness(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .portfolio-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+    <div class="geometric-bg" id="square1"></div>
+    <div class="geometric-bg" id="circle1"></div>
+
+    <main class="portfolio-card">
+        <div class="accent-border"></div>
+        
+        <header>
+            <div class="pill">Student Portfolio</div>
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-2">
+                Mahadi <span class="glow-text">Hasan</span> Sami
+            </h1>
+            <p class="text-slate-400 text-lg">Aspiring Entrepreneur & Student</p>
+        </header>
+
+        <div class="divider"></div>
+
+        <section class="grid grid-cols-2 gap-8">
+            <div>
+                <div class="stat-label">Education</div>
+                <div class="stat-value">Grade 9</div>
+                <div class="text-slate-500 text-sm">SPSC</div>
+            </div>
+            <div>
+                <div class="stat-label">Focus</div>
+                <div class="stat-value glow-text">Business</div>
+                <div class="text-slate-500 text-sm">Innovation & Strategy</div>
+            </div>
+        </section>
+
+        <section class="mt-8">
+            <div class="stat-label">Bio</div>
+            <p class="text-slate-300 leading-relaxed mt-2">
+                Hey! I'm a young entrepreneur, a sales and marketing enthusiast from Bangladesh and I'm obsessed with real-world sales and honest communication. I've built brands, launched products, and now sharing what works at the age of 16.
+            </p>
+        </section>
+
+        <a class="btn-contact" id="contactBtn">
+            Get In Touch
+        </a>
+        <a href="mailto:mahadihasansami12@gmail.com" class="btn-contact" style="margin-top: 15px; display: flex; text-decoration: none; justify-content: center; align-items: center; background: #FF3B00;">
+            Send Email
+        </a>
+
+        <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50 p-4">
+            <div class="bg-[#1A1C1E] p-8 rounded-2xl border border-[#FF3B00] max-w-sm w-full text-center">
+                <h2 class="text-2xl font-bold mb-4 glow-text">Connect</h2>
+                <p class="text-slate-300 mb-6">Email:<br>mahadihasansami12@gmail.com<br>instagram:_itz.me_sami</p>
+                <button onclick="toggleModal()" class="text-sm uppercase tracking-widest font-bold text-slate-400 hover:text-white transition-colors">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const contactBtn = document.getElementById('contactBtn');
+
+        function toggleModal() {
+            if (modal.style.display === 'flex') {
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+            }
+        }
+
+        contactBtn.addEventListener('click', toggleModal);
+
+        // Subtle parallax effect on mouse move
+        document.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            document.querySelector('.portfolio-card').style.transform = `translate(${moveX}px, ${moveY}px)`;
+            document.querySelector('.ambient-glow').style.transform = `translate(calc(-50% + ${moveX * 2}px), calc(-50% + ${moveY * 2}px))`;
+        });
+    </script>
+</body>
+</html>
